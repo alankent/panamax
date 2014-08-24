@@ -1,0 +1,4 @@
+panamax
+=======
+
+Panamax templates repository
