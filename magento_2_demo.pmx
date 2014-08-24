@@ -46,6 +46,9 @@ images:
   - host_port: '80'
     container_port: '80'
     proto: TCP
+  links:
+  - service: mysql
+    alias: mysql
   environment:
   - variable: MYSQL_USER
     value: root
@@ -53,3 +56,12 @@ images:
     value: admin
   - variable: PUBLIC_HOST
     value: localhsot
+- name: mysql
+  source: mysql:latest
+  category: Database Tier
+  type: Default
+  expose:
+  - '3306'
+  environment:
+  - variable: MYSQL_ROOT_PASSWORD
+    value: admin
